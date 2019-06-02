@@ -12,6 +12,7 @@ namespace Shop
 {
     public partial class FormScreen : Form
     {
+
         public FormScreen()
         {
             InitializeComponent();

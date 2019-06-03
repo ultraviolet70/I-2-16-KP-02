@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
+            this.progressBarScreen = new System.Windows.Forms.ProgressBar();
+            this.labelScreen = new System.Windows.Forms.Label();
+            this.timerScreen = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,25 +46,24 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // progressBar1
+            // progressBarScreen
             // 
-            this.progressBar1.Location = new System.Drawing.Point(36, 390);
-            this.progressBar1.MarqueeAnimationSpeed = 50;
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(620, 31);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar1.TabIndex = 1;
+            this.progressBarScreen.Location = new System.Drawing.Point(36, 390);
+            this.progressBarScreen.Name = "progressBarScreen";
+            this.progressBarScreen.Size = new System.Drawing.Size(620, 31);
+            this.progressBarScreen.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBarScreen.TabIndex = 1;
             // 
-            // label1
+            // labelScreen
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(178)))), ((int)(((byte)(80)))));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(667, 67);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Загрузка приложения";
+            this.labelScreen.AutoSize = true;
+            this.labelScreen.Font = new System.Drawing.Font("Verdana", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelScreen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(178)))), ((int)(((byte)(80)))));
+            this.labelScreen.Location = new System.Drawing.Point(12, 9);
+            this.labelScreen.Name = "labelScreen";
+            this.labelScreen.Size = new System.Drawing.Size(667, 67);
+            this.labelScreen.TabIndex = 2;
+            this.labelScreen.Text = "Загрузка приложения";
             // 
             // FormScreen
             // 
@@ -70,8 +71,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(696, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.labelScreen);
+            this.Controls.Add(this.progressBarScreen);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormScreen";
@@ -86,7 +87,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBarScreen;
+        private System.Windows.Forms.Label labelScreen;
+        private System.Windows.Forms.Timer timerScreen;
     }
 }

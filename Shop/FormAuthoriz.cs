@@ -72,14 +72,6 @@ namespace Shop
             }
         }
 
-        private void Check(object sender, EventArgs e)
-        {
-            if ((textBoxPassword.Text != "") & (textBoxLogin.Text != ""))
-            {
-                buttonEnter.Enabled = true;
-            }
-        }
-
         private void checkBoxPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxPassword.Checked)

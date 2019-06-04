@@ -18,5 +18,12 @@ namespace Shop
         {
             InitializeComponent();
         }
+
+        private void timerScreen_Tick(object sender, EventArgs e)
+        {
+            FormAuthoriz fa = new FormAuthoriz();
+            fa.Show();
+            this.Hide();
+        }
     }
 }

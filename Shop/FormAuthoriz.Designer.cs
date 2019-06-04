@@ -100,6 +100,7 @@
             // 
             // textBoxLogin
             // 
+            this.textBoxLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxLogin.Location = new System.Drawing.Point(252, 176);
             this.textBoxLogin.Multiline = true;
             this.textBoxLogin.Name = "textBoxLogin";

@@ -189,6 +189,7 @@
             // 
             // comboBoxPosition
             // 
+            this.comboBoxPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPosition.FormattingEnabled = true;
             this.comboBoxPosition.Location = new System.Drawing.Point(769, 339);
             this.comboBoxPosition.Name = "comboBoxPosition";
@@ -213,7 +214,7 @@
             this.checkBoxPassword.AutoSize = true;
             this.checkBoxPassword.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkBoxPassword.Location = new System.Drawing.Point(31, 350);
-            this.checkBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxPassword.Name = "checkBoxPassword";
             this.checkBoxPassword.Size = new System.Drawing.Size(249, 33);
             this.checkBoxPassword.TabIndex = 23;

@@ -53,6 +53,7 @@
             this.progressBarScreen.Size = new System.Drawing.Size(620, 31);
             this.progressBarScreen.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBarScreen.TabIndex = 1;
+            this.progressBarScreen.UseWaitCursor = true;
             // 
             // labelScreen
             // 
@@ -64,6 +65,12 @@
             this.labelScreen.Size = new System.Drawing.Size(667, 67);
             this.labelScreen.TabIndex = 2;
             this.labelScreen.Text = "Загрузка приложения";
+            // 
+            // timerScreen
+            // 
+            this.timerScreen.Enabled = true;
+            this.timerScreen.Interval = 1;
+            this.timerScreen.Tick += new System.EventHandler(this.timerScreen_Tick);
             // 
             // FormScreen
             // 

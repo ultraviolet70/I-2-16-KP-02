@@ -29,36 +29,43 @@ namespace Shop
 
         private void buttonReg_Click(object sender, EventArgs e)
         {
-            string Regist = "INSERT INTO Accounts(Login_accounts, Password_accounts, Roles_id, Accounts_Logical_Delete) VALUES('" + textBoxLogin.Text + "', '" + textBoxPassword.Text + "', 5, 0)";
-            string CountLogin1 = "SELECT COUNT(Login_accounts) FROM Accounts WHERE Login_accounts = '" + textBoxLogin.Text + "'";
-            string Emp = "INSERT INTO Employee(Login_employee, Surname_employee, Name_employee, Patronymic_employee, Position_id, Employee_Logical_Delete) VALUES('" + textBoxLogin.Text + "', '" + textBoxFam.Text + "', '" + textBoxName.Text + "', '" + textBoxMiddleName.Text + "', '" + (comboBoxPosition.SelectedIndex + 1) + "', 0)";
-            FormAuthoriz.sql.Open();
-            SqlCommand cmdLogin1 = new SqlCommand(CountLogin1, FormAuthoriz.sql);
-            SqlCommand cmdRegistr1 = new SqlCommand(Regist, FormAuthoriz.sql);
-            SqlCommand cmdRegistr2 = new SqlCommand(Emp, FormAuthoriz.sql);
-            int count1 = Convert.ToInt32(cmdLogin1.ExecuteScalar());
-            FormAuthoriz.sql.Close();
-            if (textBoxPassword.Text == textBoxReturnPassword.Text) //если пароль соответствует повторению
+            try
             {
-                if (count1 > 0) //если уже есть такой логин
+                string Regist = "INSERT INTO Accounts(Login_accounts, Password_accounts, Roles_id, Accounts_Logical_Delete) VALUES('" + textBoxLogin.Text + "', '" + textBoxPassword.Text + "', 5, 0)";
+                string CountLogin1 = "SELECT COUNT(Login_accounts) FROM Accounts WHERE Login_accounts = '" + textBoxLogin.Text + "'";
+                string Emp = "INSERT INTO Employee(Login_employee, Surname_employee, Name_employee, Patronymic_employee, Position_id, Employee_Logical_Delete) VALUES('" + textBoxLogin.Text + "', '" + textBoxFam.Text + "', '" + textBoxName.Text + "', '" + textBoxMiddleName.Text + "', '" + (comboBoxPosition.SelectedIndex + 1) + "', 0)";
+                FormAuthoriz.sql.Open();
+                SqlCommand cmdLogin1 = new SqlCommand(CountLogin1, FormAuthoriz.sql);
+                SqlCommand cmdRegistr1 = new SqlCommand(Regist, FormAuthoriz.sql);
+                SqlCommand cmdRegistr2 = new SqlCommand(Emp, FormAuthoriz.sql);
+                int count1 = Convert.ToInt32(cmdLogin1.ExecuteScalar());
+                FormAuthoriz.sql.Close();
+                if (textBoxPassword.Text == textBoxReturnPassword.Text) //если пароль соответствует повторению
                 {
-                    MessageBox.Show("Данная учётная запись уже существует");
+                    if (count1 > 0) //если уже есть такой логин
+                    {
+                        MessageBox.Show("Данная учётная запись уже существует");
+                    }
+                    else //если новый логин
+                    {
+                        FormAuthoriz.sql.Open();
+                        cmdRegistr1.ExecuteNonQuery();
+                        cmdRegistr2.ExecuteNonQuery();
+                        FormAuthoriz.sql.Close();
+                        MessageBox.Show("Учетная запись успешно создана");
+                        FormAuthoriz fa = new FormAuthoriz();
+                        fa.Show();
+                        this.Hide();
+                    }
                 }
-                else //если новый логин
+                else //если не соответствует
                 {
-                    FormAuthoriz.sql.Open();
-                    cmdRegistr1.ExecuteNonQuery();
-                    cmdRegistr2.ExecuteNonQuery();
-                    FormAuthoriz.sql.Close();
-                    MessageBox.Show("Учетная запись успешно создана");
-                    FormAuthoriz fa = new FormAuthoriz();
-                    fa.Show();
-                    this.Hide();
+                    textBoxReturnPassword.BackColor = Color.BlueViolet;
                 }
             }
-            else //если не соответствует
+            catch
             {
-                textBoxReturnPassword.BackColor = Color.BlueViolet;
+                MessageBox.Show("Проверьте правильность заполнения полей");
             }
         }
 

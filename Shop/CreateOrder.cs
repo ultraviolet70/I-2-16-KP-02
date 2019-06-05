@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Shop
 {
-    public partial class MainForm : Form
+    public partial class CreateOrder : Form
     {
-        public MainForm()
+        public CreateOrder()
         {
             InitializeComponent();
         }

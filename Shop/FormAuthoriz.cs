@@ -57,8 +57,8 @@ namespace Shop
                     SqlCommand cmdRole = new SqlCommand(Role, sql);
                     dostup = Convert.ToInt32(cmdRole.ExecuteScalar());
                     sql.Close();
-                    MainForm mf = new MainForm();
-                    mf.Show();
+                    FormMain formMain = new FormMain();
+                    formMain.Show();
                     this.Hide();
                 }
                 else //если доступа нет

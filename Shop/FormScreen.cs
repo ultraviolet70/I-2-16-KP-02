@@ -24,6 +24,7 @@ namespace Shop
             FormAuthoriz fa = new FormAuthoriz();
             fa.Show();
             this.Hide();
+            timerScreen.Enabled = false;
         }
     }
 }

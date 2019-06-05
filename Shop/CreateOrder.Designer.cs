@@ -1,6 +1,6 @@
 ﻿namespace Shop
 {
-    partial class MainForm
+    partial class CreateOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // MainForm
+            // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.ClientSize = new System.Drawing.Size(1050, 556);
+            this.Name = "CreateOrder";
+            this.Text = "Создать заказ";
             this.ResumeLayout(false);
 
         }

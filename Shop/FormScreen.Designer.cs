@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormScreen));
             this.progressBarScreen = new System.Windows.Forms.ProgressBar();
             this.labelScreen = new System.Windows.Forms.Label();
             this.timerScreen = new System.Windows.Forms.Timer(this.components);
@@ -83,6 +84,7 @@
             this.Controls.Add(this.progressBarScreen);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormScreen";

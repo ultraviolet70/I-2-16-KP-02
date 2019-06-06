@@ -12,7 +12,7 @@ namespace Shop
 {
     public partial class FormMain : Form
     {
-        public int BackForm = 1;
+
 
         public FormMain()
         {
@@ -24,34 +24,19 @@ namespace Shop
             Application.Exit();
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void buttonCreateOrder_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.PapayaWhip;
-            BackForm = 1;
+            this.Hide();
+            FormCreateOrder formCreateOrder = new FormCreateOrder();
+            formCreateOrder.Show();
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void buttonSettingColor_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.LightSkyBlue;
-            BackForm = 2;
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            this.BackColor = Color.FromArgb(244, 249, 248);
-            BackForm = 3;
-        }
-
-        private void buttonSetting_Click(object sender, EventArgs e)
-        {
-            if (panelColor.Visible == true)
-            {
-                panelColor.Visible = false;
-            }
-            else
-            {
-                panelColor.Visible = true;
-            }
+            if (colorDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            // установка цвета формы
+            this.BackColor = colorDialog1.Color;
         }
     }
 }

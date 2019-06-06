@@ -63,9 +63,9 @@ namespace Shop
                     textBoxReturnPassword.BackColor = Color.BlueViolet;
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Проверьте правильность заполнения полей");
+                MessageBox.Show("Проверьте правильность заполнения полей", ex.ToString() );
             }
         }
 

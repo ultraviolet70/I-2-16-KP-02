@@ -73,6 +73,16 @@ namespace Shop.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_long_arrow_left_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-long-arrow-left-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_шестерни_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-шестерни-48", resourceCulture);

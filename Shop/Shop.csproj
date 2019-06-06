@@ -49,11 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateOrder.cs">
+    <Compile Include="DBProcedure.cs" />
+    <Compile Include="DBTable.cs" />
+    <Compile Include="FormCreateOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateOrder.Designer.cs">
-      <DependentUpon>CreateOrder.cs</DependentUpon>
+    <Compile Include="FormCreateOrder.Designer.cs">
+      <DependentUpon>FormCreateOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAuthoriz.cs">
       <SubType>Form</SubType>
@@ -81,8 +83,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CreateOrder.resx">
-      <DependentUpon>CreateOrder.cs</DependentUpon>
+    <EmbeddedResource Include="FormCreateOrder.resx">
+      <DependentUpon>FormCreateOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAuthoriz.resx">
       <DependentUpon>FormAuthoriz.cs</DependentUpon>
@@ -124,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="436lipstick_100221.ico" />
+    <None Include="Resources\icons8-long-arrow-left-48.png" />
     <None Include="Resources\icons8-шестерни-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -34,8 +34,8 @@
             this.buttonAcc = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.buttonSettingColor = new System.Windows.Forms.Button();
-            this.buttonRole = new System.Windows.Forms.Button();
             this.buttonTovar = new System.Windows.Forms.Button();
+            this.buttonRole = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCreateOrder
@@ -95,19 +95,6 @@
             this.buttonSettingColor.UseVisualStyleBackColor = true;
             this.buttonSettingColor.Click += new System.EventHandler(this.buttonSettingColor_Click);
             // 
-            // buttonRole
-            // 
-            this.buttonRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRole.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(101)))));
-            this.buttonRole.Location = new System.Drawing.Point(892, 171);
-            this.buttonRole.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonRole.Name = "buttonRole";
-            this.buttonRole.Size = new System.Drawing.Size(166, 65);
-            this.buttonRole.TabIndex = 9;
-            this.buttonRole.Text = "Роли";
-            this.buttonRole.UseVisualStyleBackColor = true;
-            // 
             // buttonTovar
             // 
             this.buttonTovar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -120,6 +107,19 @@
             this.buttonTovar.TabIndex = 10;
             this.buttonTovar.Text = "Поставки";
             this.buttonTovar.UseVisualStyleBackColor = true;
+            // 
+            // buttonRole
+            // 
+            this.buttonRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRole.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(101)))));
+            this.buttonRole.Location = new System.Drawing.Point(892, 171);
+            this.buttonRole.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.buttonRole.Name = "buttonRole";
+            this.buttonRole.Size = new System.Drawing.Size(166, 65);
+            this.buttonRole.TabIndex = 9;
+            this.buttonRole.Text = "Роли";
+            this.buttonRole.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -143,6 +143,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Работа в приложении";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);
 
         }
@@ -153,7 +154,7 @@
         private System.Windows.Forms.Button buttonAcc;
         private System.Windows.Forms.Button buttonSettingColor;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.Button buttonRole;
         private System.Windows.Forms.Button buttonTovar;
+        private System.Windows.Forms.Button buttonRole;
     }
 }

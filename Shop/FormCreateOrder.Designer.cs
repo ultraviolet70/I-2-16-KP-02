@@ -32,19 +32,22 @@
             this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonBack = new System.Windows.Forms.Button();
             this.dataGridViewClient = new System.Windows.Forms.DataGridView();
             this.buttonChoose = new System.Windows.Forms.Button();
             this.buttonAdd1 = new System.Windows.Forms.Button();
             this.labelCheck = new System.Windows.Forms.Label();
             this.buttonWord = new System.Windows.Forms.Button();
             this.buttonPdf = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewOrder
             // 
+            this.dataGridViewOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewOrder.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridViewOrder.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOrder.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewOrder.Name = "dataGridViewOrder";
@@ -76,23 +79,18 @@
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;
             // 
-            // buttonBack
-            // 
-            this.buttonBack.BackgroundImage = global::Shop.Properties.Resources.icons8_long_arrow_left_48;
-            this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonBack.Location = new System.Drawing.Point(979, 12);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(46, 21);
-            this.buttonBack.TabIndex = 10;
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            // 
             // dataGridViewClient
             // 
+            this.dataGridViewClient.AllowUserToAddRows = false;
+            this.dataGridViewClient.AllowUserToDeleteRows = false;
+            this.dataGridViewClient.AllowUserToOrderColumns = true;
+            this.dataGridViewClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewClient.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridViewClient.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewClient.Location = new System.Drawing.Point(13, 314);
             this.dataGridViewClient.Name = "dataGridViewClient";
+            this.dataGridViewClient.ReadOnly = true;
             this.dataGridViewClient.RowTemplate.Height = 28;
             this.dataGridViewClient.Size = new System.Drawing.Size(860, 228);
             this.dataGridViewClient.TabIndex = 11;
@@ -102,7 +100,7 @@
             this.buttonChoose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonChoose.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonChoose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(101)))));
-            this.buttonChoose.Location = new System.Drawing.Point(228, 565);
+            this.buttonChoose.Location = new System.Drawing.Point(210, 565);
             this.buttonChoose.Name = "buttonChoose";
             this.buttonChoose.Size = new System.Drawing.Size(160, 36);
             this.buttonChoose.TabIndex = 13;
@@ -120,6 +118,7 @@
             this.buttonAdd1.TabIndex = 12;
             this.buttonAdd1.Text = "Добавить";
             this.buttonAdd1.UseVisualStyleBackColor = true;
+            this.buttonAdd1.Click += new System.EventHandler(this.buttonAdd1_Click);
             // 
             // labelCheck
             // 
@@ -149,6 +148,18 @@
             this.buttonPdf.Text = "PDF";
             this.buttonPdf.UseVisualStyleBackColor = true;
             // 
+            // buttonBack
+            // 
+            this.buttonBack.BackgroundImage = global::Shop.Properties.Resources.icons8_long_arrow_left_48;
+            this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonBack.Location = new System.Drawing.Point(979, 12);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(46, 21);
+            this.buttonBack.TabIndex = 10;
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // FormCreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -167,6 +178,7 @@
             this.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(101)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FormCreateOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Создать заказ";

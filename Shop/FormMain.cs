@@ -13,7 +13,7 @@ namespace Shop
     public partial class FormMain : Form
     {
 
-
+        
         public FormMain()
         {
             InitializeComponent();
@@ -25,18 +25,36 @@ namespace Shop
         }
 
         private void buttonCreateOrder_Click(object sender, EventArgs e)
-        {
-            this.Hide();
+        { 
             FormCreateOrder formCreateOrder = new FormCreateOrder();
             formCreateOrder.Show();
+            this.Hide();
         }
 
         private void buttonSettingColor_Click(object sender, EventArgs e)
         {
-            if (colorDialog1.ShowDialog() == DialogResult.Cancel)
-                return;
+            //return;
             // установка цвета формы
-            this.BackColor = colorDialog1.Color;
+            FormColor(sender);
+
+        }
+
+        public static object obj= Color.FromArgb(244, 249, 248);
+
+        private void FormColor(object sender)
+        {
+            
+            //FormCreateOrder order = new FormCreateOrder();
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                BackColor = colorDialog1.Color;               
+                obj = colorDialog1.Color;
+            }
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            BackColor = (Color)FormMain.obj;
         }
     }
 }

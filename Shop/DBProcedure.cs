@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace Shop
 {
     class DBProcedure
     {
+
+
         private SqlCommand cmd = new SqlCommand();
         private void spConfiguration(string spName)
         {
@@ -16,7 +19,7 @@ namespace Shop
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
         }
 
-        private void Client_Insert(string Surname_client, string Name_client, string Patronymic_client,
+        public void Client_Insert(string Surname_client, string Name_client, string Patronymic_client,
         string Number_client, string Email_client)
         {
             spConfiguration("Client_Insert");
@@ -29,7 +32,7 @@ namespace Shop
             cmd.Parameters.Clear();
         }
 
-        private void Client_Update(Int32 ID_Client, string Surname_client, string Name_client, string Patronymic_client,
+        public void Client_Update(Int32 ID_Client, string Surname_client, string Name_client, string Patronymic_client,
         string Number_client, string Email_client)
         {
             spConfiguration("Client_Update");
@@ -388,7 +391,7 @@ namespace Shop
             cmd.Parameters.Clear();
         }
 
-        private void Employee_Insert(string Login_employee, string Surname_employee, string Name_employee, 
+        public void Employee_Insert(string Login_employee, string Surname_employee, string Name_employee, 
         string Patronymic_employee, Int32 Position_ID)
         {
             spConfiguration("Employee_Insert");
@@ -400,7 +403,7 @@ namespace Shop
             cmd.Parameters.Clear();
         }
 
-        private void Employee_Update(Int32 ID_Employee, string Login_employee, string Surname_employee, string Name_employee,
+        public void Employee_Update(Int32 ID_Employee, string Login_employee, string Surname_employee, string Name_employee,
         string Patronymic_employee, Int32 Position_ID)
         {
             spConfiguration("Employee_Update");
@@ -413,7 +416,7 @@ namespace Shop
             cmd.Parameters.Clear();
         }
 
-        private void Employee_Delete(Int32 ID_Employee)
+        public void Employee_Delete(Int32 ID_Employee)
         {
             spConfiguration("Employee_Delete");
             cmd.Parameters.AddWithValue("@ID_Employee", ID_Employee);
@@ -421,7 +424,7 @@ namespace Shop
             cmd.Parameters.Clear();
         }
 
-        private void Employee_Logical_Delete(Int32 ID_Employee)
+        public void Employee_Logical_Delete(Int32 ID_Employee)
         {
             spConfiguration("Client_Logical_Delete");
             cmd.Parameters.AddWithValue("@ID_Employee", ID_Employee);

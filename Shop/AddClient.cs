@@ -13,6 +13,7 @@ namespace Shop
 {
     public partial class AddClient : Form
     {
+
         DBProcedure DBProcedure = new DBProcedure();
         public AddClient()
         {
@@ -27,7 +28,6 @@ namespace Shop
         private void buttonAddClient_Click(object sender, EventArgs e)
         {
             DBProcedure.Client_Insert(textBoxSurnameClient.Text, textBoxNameClient.Text, cueTextBoxMiddleNameClient.Text, cueTextBoxPhoneClient.Text, textBoxEmailClient.Text);
-
         }
     }
 }

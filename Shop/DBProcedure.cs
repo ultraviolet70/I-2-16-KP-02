@@ -10,8 +10,6 @@ namespace Shop
 {
     class DBProcedure
     {
-
-
         private SqlCommand cmd = new SqlCommand();
         private void spConfiguration(string spName)
         {
@@ -28,7 +26,6 @@ namespace Shop
             cmd.Parameters.AddWithValue("@Patronymic_client", Patronymic_client);
             cmd.Parameters.AddWithValue("@Number_client", Number_client);
             cmd.Parameters.AddWithValue("@Email_client", Email_client);
-            cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
         }
 
@@ -391,7 +388,7 @@ namespace Shop
             cmd.Parameters.Clear();
         }
 
-        public void Employee_Insert(string Login_employee, string Surname_employee, string Name_employee, 
+        public void Employee_Insert(string Login_employee, string Surname_employee, string Name_employee,
         string Patronymic_employee, Int32 Position_ID)
         {
             spConfiguration("Employee_Insert");

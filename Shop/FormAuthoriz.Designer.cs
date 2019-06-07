@@ -37,6 +37,9 @@
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.checkBoxPassword = new System.Windows.Forms.CheckBox();
+            this.strpInfo = new System.Windows.Forms.StatusStrip();
+            this.tsslCon = new System.Windows.Forms.ToolStripStatusLabel();
+            this.strpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelAuthoriz
@@ -129,12 +132,30 @@
             this.checkBoxPassword.UseVisualStyleBackColor = true;
             this.checkBoxPassword.CheckedChanged += new System.EventHandler(this.checkBoxPassword_CheckedChanged);
             // 
+            // strpInfo
+            // 
+            this.strpInfo.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.strpInfo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslCon});
+            this.strpInfo.Location = new System.Drawing.Point(0, 479);
+            this.strpInfo.Name = "strpInfo";
+            this.strpInfo.Size = new System.Drawing.Size(684, 30);
+            this.strpInfo.TabIndex = 23;
+            this.strpInfo.Text = "statusStrip1";
+            // 
+            // tsslCon
+            // 
+            this.tsslCon.Name = "tsslCon";
+            this.tsslCon.Size = new System.Drawing.Size(19, 25);
+            this.tsslCon.Text = "-";
+            // 
             // FormAuthoriz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(684, 509);
+            this.Controls.Add(this.strpInfo);
             this.Controls.Add(this.checkBoxPassword);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxLogin);
@@ -150,6 +171,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAuthoriz_FormClosing);
+            this.strpInfo.ResumeLayout(false);
+            this.strpInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +188,7 @@
         private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.CheckBox checkBoxPassword;
+        private System.Windows.Forms.StatusStrip strpInfo;
+        private System.Windows.Forms.ToolStripStatusLabel tsslCon;
     }
 }

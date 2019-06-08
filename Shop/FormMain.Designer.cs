@@ -77,6 +77,7 @@
             this.buttonAcc.TabIndex = 7;
             this.buttonAcc.Text = "Сотрудники";
             this.buttonAcc.UseVisualStyleBackColor = true;
+            this.buttonAcc.Click += new System.EventHandler(this.buttonAcc_Click);
             // 
             // colorDialog1
             // 
@@ -107,6 +108,7 @@
             this.buttonTovar.TabIndex = 10;
             this.buttonTovar.Text = "Поставки";
             this.buttonTovar.UseVisualStyleBackColor = true;
+            this.buttonTovar.Click += new System.EventHandler(this.buttonTovar_Click);
             // 
             // buttonRole
             // 

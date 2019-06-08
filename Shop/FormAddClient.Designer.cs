@@ -1,6 +1,6 @@
 ﻿namespace Shop
 {
-    partial class AddClient
+    partial class FormAddClient
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddClient));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddClient));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,10 +36,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxSurnameClient = new System.Windows.Forms.TextBox();
             this.textBoxNameClient = new System.Windows.Forms.TextBox();
-            this.textBoxEmailClient = new System.Windows.Forms.TextBox();
             this.cueTextBoxMiddleNameClient = new CueTextBox();
             this.buttonAddClient = new System.Windows.Forms.Button();
             this.cueTextBoxPhoneClient = new CueTextBox();
+            this.cueTextBoxEmailClient = new CueTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -111,13 +111,6 @@
             this.textBoxNameClient.Size = new System.Drawing.Size(305, 26);
             this.textBoxNameClient.TabIndex = 6;
             // 
-            // textBoxEmailClient
-            // 
-            this.textBoxEmailClient.Location = new System.Drawing.Point(267, 296);
-            this.textBoxEmailClient.Name = "textBoxEmailClient";
-            this.textBoxEmailClient.Size = new System.Drawing.Size(305, 26);
-            this.textBoxEmailClient.TabIndex = 9;
-            // 
             // cueTextBoxMiddleNameClient
             // 
             this.cueTextBoxMiddleNameClient.Cue = "(не обязательно)";
@@ -146,15 +139,23 @@
             this.cueTextBoxPhoneClient.Size = new System.Drawing.Size(305, 26);
             this.cueTextBoxPhoneClient.TabIndex = 13;
             // 
-            // AddClient
+            // cueTextBoxEmailClient
+            // 
+            this.cueTextBoxEmailClient.Cue = "name@gmail.com";
+            this.cueTextBoxEmailClient.Location = new System.Drawing.Point(267, 300);
+            this.cueTextBoxEmailClient.Name = "cueTextBoxEmailClient";
+            this.cueTextBoxEmailClient.Size = new System.Drawing.Size(305, 26);
+            this.cueTextBoxEmailClient.TabIndex = 15;
+            // 
+            // FormAddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 450);
+            this.Controls.Add(this.cueTextBoxEmailClient);
             this.Controls.Add(this.cueTextBoxPhoneClient);
             this.Controls.Add(this.buttonAddClient);
             this.Controls.Add(this.cueTextBoxMiddleNameClient);
-            this.Controls.Add(this.textBoxEmailClient);
             this.Controls.Add(this.textBoxNameClient);
             this.Controls.Add(this.textBoxSurnameClient);
             this.Controls.Add(this.label5);
@@ -165,7 +166,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "AddClient";
+            this.Name = "FormAddClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавить клиента";
             this.Load += new System.EventHandler(this.AddClient_Load);
@@ -183,9 +184,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxSurnameClient;
         private System.Windows.Forms.TextBox textBoxNameClient;
-        private System.Windows.Forms.TextBox textBoxEmailClient;
         private CueTextBox cueTextBoxMiddleNameClient;
         private System.Windows.Forms.Button buttonAddClient;
         private CueTextBox cueTextBoxPhoneClient;
+        private CueTextBox cueTextBoxEmailClient;
     }
 }

@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegister));
             this.labelReg = new System.Windows.Forms.Label();
             this.labelLogin = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelReturnPassword = new System.Windows.Forms.Label();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxReturnPassword = new System.Windows.Forms.TextBox();
             this.labelFam = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
@@ -46,6 +46,8 @@
             this.comboBoxPosition = new System.Windows.Forms.ComboBox();
             this.buttonReg = new System.Windows.Forms.Button();
             this.checkBoxPassword = new System.Windows.Forms.CheckBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cueTextBoxPassword = new CueTextBox();
             this.SuspendLayout();
             // 
             // labelReg
@@ -94,28 +96,17 @@
             // 
             // textBoxLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(313, 121);
-            this.textBoxLogin.Multiline = true;
+            this.textBoxLogin.Location = new System.Drawing.Point(313, 126);
             this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(208, 41);
+            this.textBoxLogin.Size = new System.Drawing.Size(208, 26);
             this.textBoxLogin.TabIndex = 6;
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Location = new System.Drawing.Point(313, 188);
-            this.textBoxPassword.Multiline = true;
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '❂';
-            this.textBoxPassword.Size = new System.Drawing.Size(208, 41);
-            this.textBoxPassword.TabIndex = 7;
             // 
             // textBoxReturnPassword
             // 
-            this.textBoxReturnPassword.Location = new System.Drawing.Point(313, 261);
-            this.textBoxReturnPassword.Multiline = true;
+            this.textBoxReturnPassword.Location = new System.Drawing.Point(313, 274);
             this.textBoxReturnPassword.Name = "textBoxReturnPassword";
             this.textBoxReturnPassword.PasswordChar = '❂';
-            this.textBoxReturnPassword.Size = new System.Drawing.Size(208, 41);
+            this.textBoxReturnPassword.Size = new System.Drawing.Size(208, 26);
             this.textBoxReturnPassword.TabIndex = 8;
             this.textBoxReturnPassword.TextChanged += new System.EventHandler(this.textBoxReturnPassword_TextChanged);
             // 
@@ -166,25 +157,22 @@
             // textBoxFam
             // 
             this.textBoxFam.Location = new System.Drawing.Point(769, 121);
-            this.textBoxFam.Multiline = true;
             this.textBoxFam.Name = "textBoxFam";
-            this.textBoxFam.Size = new System.Drawing.Size(208, 41);
+            this.textBoxFam.Size = new System.Drawing.Size(208, 26);
             this.textBoxFam.TabIndex = 13;
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(769, 188);
-            this.textBoxName.Multiline = true;
+            this.textBoxName.Location = new System.Drawing.Point(769, 200);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(208, 41);
+            this.textBoxName.Size = new System.Drawing.Size(208, 26);
             this.textBoxName.TabIndex = 14;
             // 
             // textBoxMiddleName
             // 
-            this.textBoxMiddleName.Location = new System.Drawing.Point(769, 261);
-            this.textBoxMiddleName.Multiline = true;
+            this.textBoxMiddleName.Location = new System.Drawing.Point(768, 274);
             this.textBoxMiddleName.Name = "textBoxMiddleName";
-            this.textBoxMiddleName.Size = new System.Drawing.Size(208, 41);
+            this.textBoxMiddleName.Size = new System.Drawing.Size(208, 26);
             this.textBoxMiddleName.TabIndex = 15;
             // 
             // comboBoxPosition
@@ -222,12 +210,23 @@
             this.checkBoxPassword.UseVisualStyleBackColor = true;
             this.checkBoxPassword.CheckedChanged += new System.EventHandler(this.checkBoxPassword_CheckedChanged);
             // 
+            // cueTextBoxPassword
+            // 
+            this.cueTextBoxPassword.Cue = "Яloveyou@123";
+            this.cueTextBoxPassword.Location = new System.Drawing.Point(313, 205);
+            this.cueTextBoxPassword.Name = "cueTextBoxPassword";
+            this.cueTextBoxPassword.Size = new System.Drawing.Size(208, 26);
+            this.cueTextBoxPassword.TabIndex = 24;
+            this.toolTip1.SetToolTip(this.cueTextBoxPassword, "Обязательно наличие цифр, специальных знаков,\r\nзаглавной буквы, русских и английс" +
+        "ких букв.");
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1015, 494);
+            this.Controls.Add(this.cueTextBoxPassword);
             this.Controls.Add(this.checkBoxPassword);
             this.Controls.Add(this.buttonReg);
             this.Controls.Add(this.comboBoxPosition);
@@ -239,7 +238,6 @@
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelFam);
             this.Controls.Add(this.textBoxReturnPassword);
-            this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.labelReturnPassword);
             this.Controls.Add(this.labelPassword);
@@ -264,7 +262,6 @@
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelReturnPassword;
         private System.Windows.Forms.TextBox textBoxLogin;
-        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxReturnPassword;
         private System.Windows.Forms.Label labelFam;
         private System.Windows.Forms.Label labelName;
@@ -276,5 +273,7 @@
         private System.Windows.Forms.ComboBox comboBoxPosition;
         private System.Windows.Forms.Button buttonReg;
         private System.Windows.Forms.CheckBox checkBoxPassword;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private CueTextBox cueTextBoxPassword;
     }
 }

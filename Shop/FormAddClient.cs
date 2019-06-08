@@ -11,11 +11,11 @@ using System.Data.SqlClient;
 
 namespace Shop
 {
-    public partial class AddClient : Form
+    public partial class FormAddClient : Form
     {
 
         DBProcedure DBProcedure = new DBProcedure();
-        public AddClient()
+        public FormAddClient()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace Shop
 
         private void buttonAddClient_Click(object sender, EventArgs e)
         {
-            DBProcedure.Client_Insert(textBoxSurnameClient.Text, textBoxNameClient.Text, cueTextBoxMiddleNameClient.Text, cueTextBoxPhoneClient.Text, textBoxEmailClient.Text);
+            //DBProcedure.Client_Insert(textBoxSurnameClient.Text, textBoxNameClient.Text, cueTextBoxMiddleNameClient.Text, cueTextBoxPhoneClient.Text, textBoxEmailClient.Text);
         }
     }
 }

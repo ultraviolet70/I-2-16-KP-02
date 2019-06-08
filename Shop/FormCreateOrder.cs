@@ -45,7 +45,7 @@ namespace Shop
 
         private void buttonAdd1_Click(object sender, EventArgs e)
         {
-            AddClient addClient = new AddClient();
+            FormAddClient addClient = new FormAddClient();
             addClient.Show();
         }
     }

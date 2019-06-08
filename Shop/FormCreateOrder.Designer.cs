@@ -81,9 +81,6 @@
             // 
             // dataGridViewClient
             // 
-            this.dataGridViewClient.AllowUserToAddRows = false;
-            this.dataGridViewClient.AllowUserToDeleteRows = false;
-            this.dataGridViewClient.AllowUserToOrderColumns = true;
             this.dataGridViewClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewClient.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridViewClient.BackgroundColor = System.Drawing.Color.White;
@@ -123,7 +120,7 @@
             // labelCheck
             // 
             this.labelCheck.AutoSize = true;
-            this.labelCheck.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCheck.Font = new System.Drawing.Font("Verdana", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelCheck.Location = new System.Drawing.Point(888, 314);
             this.labelCheck.Name = "labelCheck";
             this.labelCheck.Size = new System.Drawing.Size(137, 18);
@@ -132,21 +129,25 @@
             // 
             // buttonWord
             // 
+            this.buttonWord.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonWord.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonWord.Location = new System.Drawing.Point(891, 350);
             this.buttonWord.Name = "buttonWord";
             this.buttonWord.Size = new System.Drawing.Size(119, 34);
             this.buttonWord.TabIndex = 15;
             this.buttonWord.Text = "Word";
-            this.buttonWord.UseVisualStyleBackColor = true;
+            this.buttonWord.UseVisualStyleBackColor = false;
             // 
             // buttonPdf
             // 
+            this.buttonPdf.BackColor = System.Drawing.SystemColors.Info;
+            this.buttonPdf.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonPdf.Location = new System.Drawing.Point(891, 400);
             this.buttonPdf.Name = "buttonPdf";
             this.buttonPdf.Size = new System.Drawing.Size(119, 34);
             this.buttonPdf.TabIndex = 16;
             this.buttonPdf.Text = "PDF";
-            this.buttonPdf.UseVisualStyleBackColor = true;
+            this.buttonPdf.UseVisualStyleBackColor = false;
             // 
             // buttonBack
             // 
@@ -181,7 +182,7 @@
             this.MaximizeBox = false;
             this.Name = "FormCreateOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Создать заказ";
+            this.Text = "Работа с заказами";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCreateOrder_FormClosing);
             this.Load += new System.EventHandler(this.FormCreateOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();

@@ -33,9 +33,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonAddClient = new System.Windows.Forms.Button();
+            this.buttonAddSupplier = new System.Windows.Forms.Button();
             this.cueTextBoxPhoneSupplier = new CueTextBox();
             this.cueTextBoxEmailSupplier = new CueTextBox();
+            this.dgvSupplier = new System.Windows.Forms.DataGridView();
+            this.buttonDelSupplier = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxNameSupplier
@@ -78,16 +81,17 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Электронная почта:";
             // 
-            // buttonAddClient
+            // buttonAddSupplier
             // 
-            this.buttonAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(101)))));
-            this.buttonAddClient.Location = new System.Drawing.Point(33, 228);
-            this.buttonAddClient.Name = "buttonAddClient";
-            this.buttonAddClient.Size = new System.Drawing.Size(121, 33);
-            this.buttonAddClient.TabIndex = 13;
-            this.buttonAddClient.Text = "Добавить";
-            this.buttonAddClient.UseVisualStyleBackColor = true;
+            this.buttonAddSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(101)))));
+            this.buttonAddSupplier.Location = new System.Drawing.Point(33, 204);
+            this.buttonAddSupplier.Name = "buttonAddSupplier";
+            this.buttonAddSupplier.Size = new System.Drawing.Size(121, 33);
+            this.buttonAddSupplier.TabIndex = 13;
+            this.buttonAddSupplier.Text = "Добавить";
+            this.buttonAddSupplier.UseVisualStyleBackColor = true;
+            this.buttonAddSupplier.Click += new System.EventHandler(this.buttonAddSupplier_Click);
             // 
             // cueTextBoxPhoneSupplier
             // 
@@ -105,13 +109,38 @@
             this.cueTextBoxEmailSupplier.Size = new System.Drawing.Size(305, 26);
             this.cueTextBoxEmailSupplier.TabIndex = 14;
             // 
+            // dgvSupplier
+            // 
+            this.dgvSupplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSupplier.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSupplier.Location = new System.Drawing.Point(33, 253);
+            this.dgvSupplier.Name = "dgvSupplier";
+            this.dgvSupplier.RowTemplate.Height = 28;
+            this.dgvSupplier.Size = new System.Drawing.Size(602, 231);
+            this.dgvSupplier.TabIndex = 15;
+            // 
+            // buttonDelSupplier
+            // 
+            this.buttonDelSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(101)))));
+            this.buttonDelSupplier.Location = new System.Drawing.Point(182, 204);
+            this.buttonDelSupplier.Name = "buttonDelSupplier";
+            this.buttonDelSupplier.Size = new System.Drawing.Size(121, 33);
+            this.buttonDelSupplier.TabIndex = 16;
+            this.buttonDelSupplier.Text = "Удалить";
+            this.buttonDelSupplier.UseVisualStyleBackColor = true;
+            this.buttonDelSupplier.Click += new System.EventHandler(this.buttonDelSupplier_Click);
+            // 
             // FormAddSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 290);
+            this.ClientSize = new System.Drawing.Size(657, 513);
+            this.Controls.Add(this.buttonDelSupplier);
+            this.Controls.Add(this.dgvSupplier);
             this.Controls.Add(this.cueTextBoxEmailSupplier);
-            this.Controls.Add(this.buttonAddClient);
+            this.Controls.Add(this.buttonAddSupplier);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -124,6 +153,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавить поставщика";
             this.Load += new System.EventHandler(this.FormAddSupplier_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,7 +166,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonAddClient;
+        private System.Windows.Forms.Button buttonAddSupplier;
         private CueTextBox cueTextBoxEmailSupplier;
+        private System.Windows.Forms.DataGridView dgvSupplier;
+        private System.Windows.Forms.Button buttonDelSupplier;
     }
 }

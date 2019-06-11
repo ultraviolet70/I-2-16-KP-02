@@ -16,19 +16,38 @@ namespace Shop
         public FormSupply()
         {
             InitializeComponent();
+            FormAuthoriz.sql.Open();
+            SqlCommand command3 = new SqlCommand("SELECT Name_supplier FROM Supplier", FormAuthoriz.sql);
+            SqlCommand command4 = new SqlCommand("SELECT Surname_employee FROM Employee", FormAuthoriz.sql);
+            SqlCommand command5 = new SqlCommand("SELECT Name_product FROM Type_Product", FormAuthoriz.sql);
+
+            SqlDataReader read3 = command3.ExecuteReader();
+            while (read3.Read())
+            {
+                cbPost.Items.Add(read3.GetValue(0).ToString());
+            }
+            read3.Close();
+
+            SqlDataReader read4 = command4.ExecuteReader();
+            while (read4.Read())
+            {
+                cbEmployee.Items.Add(read4.GetValue(0).ToString());
+            }
+            read4.Close();
+
+            SqlDataReader read5 = command5.ExecuteReader();
+            while (read5.Read())
+            {
+                cbCategory.Items.Add(read5.GetValue(0).ToString());
+            }
+            read5.Close();
+
+            FormAuthoriz.sql.Close();
         }
 
         private void FormSupply_Load(object sender, EventArgs e)
         {
             BackColor = (Color)FormMain.obj;
-
-            string query2 = "SELECT ID_Supplier, Name_supplier as 'Наименование поставщика', Contact_number as 'Контактный номер', Email_supplier as 'Электронная почта', Supplier_Logical_Delete FROM Supplier";
-            DataTable table2 = new DataTable();
-            SqlDataAdapter adapter2 = new SqlDataAdapter(query2, FormAuthoriz.sql);
-            adapter2.Fill(table2);
-            dataGridViewSupplier.DataSource = table2;
-            dataGridViewSupplier.Columns[0].Visible = false;
-            dataGridViewSupplier.Columns[4].Visible = false;
         }
 
         private void FormSupply_FormClosing(object sender, FormClosingEventArgs e)
@@ -45,8 +64,21 @@ namespace Shop
 
         private void buttonAddSup_Click(object sender, EventArgs e)
         {
-            FormAddSupplier addSupplier = new FormAddSupplier();
-            addSupplier.Show();
+            this.Hide();
+            FormMain formMain = new FormMain();
+            formMain.Show();
+        }
+
+        private void btnPostInsert_Click(object sender, EventArgs e)
+        {
+            FormAddSupplier child1 = new FormAddSupplier(this);
+            child1.Show();
+        }
+
+        private void btnKlientInsert_Click(object sender, EventArgs e)
+        {
+            FormAddCategory formAddCategory = new FormAddCategory();
+            formAddCategory.Show();
         }
     }
 }

@@ -171,6 +171,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormAuthoriz_FormClosing);
+            this.Load += new System.EventHandler(this.FormAuthoriz_Load);
             this.strpInfo.ResumeLayout(false);
             this.strpInfo.PerformLayout();
             this.ResumeLayout(false);

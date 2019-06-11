@@ -97,5 +97,12 @@ namespace Shop
             formEmployee.Show();
             this.Hide();
         }
+
+        private void buttonCreateDoc_Click(object sender, EventArgs e)
+        {
+            FormAddDocument formAddDocument = new FormAddDocument();
+            formAddDocument.Show();
+            this.Hide();
+        }
     }
 }

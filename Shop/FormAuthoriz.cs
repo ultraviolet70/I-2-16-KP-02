@@ -14,6 +14,10 @@ namespace Shop
 {
     public partial class FormAuthoriz : Form
     {
+
+        Registry_Class registry = new Registry_Class();
+        DataBase_Configuration data = new DataBase_Configuration();
+
         public static int dostup;
         public static SqlConnection sql = new SqlConnection("Data Source = DESKTOP-N7ITL14\\KATE;" +
                  "Initial Catalog = Shop;" +
@@ -83,6 +87,34 @@ namespace Shop
             {
                 textBoxPassword.PasswordChar = '❂';
             }
+        }
+
+        public void FormAuthoriz_Load(object sender, EventArgs e)
+        {
+            tsslCon.Visible = true;
+            tsslCon.Text = "Опрделение серверера...";
+            data.conState += constate;
+            Thread thread = new Thread(data.Connection_check);
+            thread.Start();
+        }
+
+        private void constate(bool value)
+        {
+            Action action = () =>
+            {
+                switch (value)
+                {
+                    case (true):
+                        tsslCon.Text = Registry_Class.DSIP + "\\" + Registry_Class.DSSN + " - " + Registry_Class.IC;
+                        break;
+                    case (false):
+                        FormConnection conection = new FormConnection();
+                        tsslCon.Text = "Подключение отсутвует!";
+                        conection.Show(this);
+                        break;
+                }
+            };
+            Invoke(action);
         }
     }
 }

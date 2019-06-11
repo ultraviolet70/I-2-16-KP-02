@@ -33,9 +33,8 @@
             this.buttonCreateDoc = new System.Windows.Forms.Button();
             this.buttonAcc = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.buttonSettingColor = new System.Windows.Forms.Button();
             this.buttonTovar = new System.Windows.Forms.Button();
-            this.buttonRole = new System.Windows.Forms.Button();
+            this.buttonSettingColor = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCreateOrder
@@ -64,6 +63,7 @@
             this.buttonCreateDoc.TabIndex = 6;
             this.buttonCreateDoc.Text = "Отчеты";
             this.buttonCreateDoc.UseVisualStyleBackColor = true;
+            this.buttonCreateDoc.Click += new System.EventHandler(this.buttonCreateDoc_Click);
             // 
             // buttonAcc
             // 
@@ -84,18 +84,6 @@
             this.colorDialog1.AnyColor = true;
             this.colorDialog1.FullOpen = true;
             // 
-            // buttonSettingColor
-            // 
-            this.buttonSettingColor.BackgroundImage = global::Shop.Properties.Resources.icons8_шестерни_48;
-            this.buttonSettingColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonSettingColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSettingColor.Location = new System.Drawing.Point(1018, 12);
-            this.buttonSettingColor.Name = "buttonSettingColor";
-            this.buttonSettingColor.Size = new System.Drawing.Size(40, 35);
-            this.buttonSettingColor.TabIndex = 8;
-            this.buttonSettingColor.UseVisualStyleBackColor = true;
-            this.buttonSettingColor.Click += new System.EventHandler(this.buttonSettingColor_Click);
-            // 
             // buttonTovar
             // 
             this.buttonTovar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -110,18 +98,17 @@
             this.buttonTovar.UseVisualStyleBackColor = true;
             this.buttonTovar.Click += new System.EventHandler(this.buttonTovar_Click);
             // 
-            // buttonRole
+            // buttonSettingColor
             // 
-            this.buttonRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRole.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(101)))));
-            this.buttonRole.Location = new System.Drawing.Point(892, 171);
-            this.buttonRole.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.buttonRole.Name = "buttonRole";
-            this.buttonRole.Size = new System.Drawing.Size(166, 65);
-            this.buttonRole.TabIndex = 9;
-            this.buttonRole.Text = "Роли";
-            this.buttonRole.UseVisualStyleBackColor = true;
+            this.buttonSettingColor.BackgroundImage = global::Shop.Properties.Resources.icons8_шестерни_48;
+            this.buttonSettingColor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonSettingColor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSettingColor.Location = new System.Drawing.Point(1018, 12);
+            this.buttonSettingColor.Name = "buttonSettingColor";
+            this.buttonSettingColor.Size = new System.Drawing.Size(40, 35);
+            this.buttonSettingColor.TabIndex = 8;
+            this.buttonSettingColor.UseVisualStyleBackColor = true;
+            this.buttonSettingColor.Click += new System.EventHandler(this.buttonSettingColor_Click);
             // 
             // FormMain
             // 
@@ -130,7 +117,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1074, 491);
             this.Controls.Add(this.buttonTovar);
-            this.Controls.Add(this.buttonRole);
             this.Controls.Add(this.buttonSettingColor);
             this.Controls.Add(this.buttonAcc);
             this.Controls.Add(this.buttonCreateDoc);
@@ -157,6 +143,5 @@
         private System.Windows.Forms.Button buttonSettingColor;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button buttonTovar;
-        private System.Windows.Forms.Button buttonRole;
     }
 }

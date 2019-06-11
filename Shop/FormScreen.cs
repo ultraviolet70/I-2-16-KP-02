@@ -21,7 +21,7 @@ namespace Shop
 
         private void timerScreen_Tick(object sender, EventArgs e)
         {
-            FormAuthoriz fa = new FormAuthoriz();
+            FormConnection fa = new FormConnection();
             fa.Show();
             this.Hide();
             timerScreen.Enabled = false;

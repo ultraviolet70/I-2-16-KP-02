@@ -29,22 +29,37 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmployee));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewAcc = new System.Windows.Forms.DataGridView();
+            this.buttonAddPosition = new System.Windows.Forms.Button();
             this.buttonBack3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAcc)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewAcc
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(690, 338);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewAcc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewAcc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dataGridViewAcc.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAcc.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewAcc.Name = "dataGridViewAcc";
+            this.dataGridViewAcc.RowTemplate.Height = 28;
+            this.dataGridViewAcc.Size = new System.Drawing.Size(690, 338);
+            this.dataGridViewAcc.TabIndex = 0;
+            // 
+            // buttonAddPosition
+            // 
+            this.buttonAddPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddPosition.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAddPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(101)))));
+            this.buttonAddPosition.Location = new System.Drawing.Point(12, 373);
+            this.buttonAddPosition.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.buttonAddPosition.Name = "buttonAddPosition";
+            this.buttonAddPosition.Size = new System.Drawing.Size(183, 44);
+            this.buttonAddPosition.TabIndex = 29;
+            this.buttonAddPosition.Text = "Должности";
+            this.buttonAddPosition.UseVisualStyleBackColor = true;
+            this.buttonAddPosition.Click += new System.EventHandler(this.buttonAddPosition_Click);
             // 
             // buttonBack3
             // 
@@ -63,24 +78,28 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 611);
+            this.Controls.Add(this.buttonAddPosition);
             this.Controls.Add(this.buttonBack3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewAcc);
             this.Font = new System.Drawing.Font("Verdana", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(101)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сотрудники";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormEmployee_FormClosing);
             this.Load += new System.EventHandler(this.FormEmployee_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAcc)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewAcc;
         private System.Windows.Forms.Button buttonBack3;
+        private System.Windows.Forms.Button buttonAddPosition;
     }
 }

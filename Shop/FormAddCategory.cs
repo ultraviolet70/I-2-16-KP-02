@@ -11,24 +11,20 @@ using System.Windows.Forms;
 
 namespace Shop
 {
-    public partial class FormAddSupplier : Form
+    public partial class FormAddCategory : Form
     {
-        public FormSupply otherForm1;
-
-        public FormAddSupplier(FormSupply form2)
+        public FormAddCategory()
         {
             InitializeComponent();
-            otherForm1 = form2;
         }
 
-        private void FormAddSupplier_Load(object sender, EventArgs e)
+        private void FormAddCategory_Load(object sender, EventArgs e)
         {
             BackColor = (Color)FormMain.obj;
             GetData();
-            dgvSupplier.Columns["ID_Supplier"].Visible = false;
         }
 
-        public SqlCommand command = new SqlCommand("Select [ID_Supplier], [Name_supplier] as 'Наименование поставщика', [Contact_number] as 'Контактный телефон', [Email_supplier] as 'Электронная почта'  from [dbo].[Supplier]");
+        public SqlCommand command = new SqlCommand("Select [Name_product] as 'Категория товара' from [dbo].[Type_Product]");
         public void GetData()
         {
             Action act = () =>
@@ -41,7 +37,7 @@ namespace Shop
                 FormAuthoriz.sql.Open();
                 DataTable data = new DataTable();
                 data.Load(command.ExecuteReader());
-                dgvSupplier.DataSource = data;
+                dgvCategory.DataSource = data;
                 FormAuthoriz.sql.Close();
             };
             Invoke(act);
@@ -53,16 +49,14 @@ namespace Shop
                 GetData();
         }
 
-        private void buttonAddSupplier_Click(object sender, EventArgs e)
+        private void btnAddCategory_Click(object sender, EventArgs e)
         {
             try
             {
                 FormAuthoriz.sql.Open();
-                SqlCommand Add = new SqlCommand("Supplier_Insert", FormAuthoriz.sql);
+                SqlCommand Add = new SqlCommand("Type_Product_Insert", FormAuthoriz.sql);
                 Add.CommandType = CommandType.StoredProcedure;
-                Add.Parameters.AddWithValue("@Name_supplier", textBoxNameSupplier.Text);
-                Add.Parameters.AddWithValue("@Contact_number", textBoxNameSupplier.Text);
-                Add.Parameters.AddWithValue("@Email_supplier", textBoxNameSupplier.Text);
+                Add.Parameters.AddWithValue("@Name_product", tbCategory.Text);
                 Add.ExecuteNonQuery();
             }
             catch (SqlException ex)
@@ -73,22 +67,20 @@ namespace Shop
             {
                 FormAuthoriz.sql.Close();
             }
-            textBoxNameSupplier.Clear();
-            cueTextBoxPhoneSupplier.Clear();
-            cueTextBoxEmailSupplier.Clear();
+            tbCategory.Clear();
         }
 
-        private void buttonDelSupplier_Click(object sender, EventArgs e)
+        private void btnDelCategory_Click(object sender, EventArgs e)
         {
-            DataRowView id = (DataRowView)dgvSupplier.CurrentRow.DataBoundItem;
+            DataRowView id = (DataRowView)dgvCategory.CurrentRow.DataBoundItem;
             try
             {
                 FormAuthoriz.sql.Open();
-                SqlCommand del = new SqlCommand("Supplier_Delete", FormAuthoriz.sql);
+                SqlCommand del = new SqlCommand("Type_Product_Delete", FormAuthoriz.sql);
                 if (MessageBox.Show("Вы действительно хотите удалить данную позицию из базы данных навсегда?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     del.CommandType = CommandType.StoredProcedure;
-                    del.Parameters.AddWithValue("@ID_Supplier", (int)id["ID_Supplier"]);
+                    del.Parameters.AddWithValue("@ID_Type_Product", (int)id["ID_Type_Product"]);
                     del.ExecuteNonQuery();
                 }
                 else

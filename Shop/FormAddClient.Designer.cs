@@ -36,10 +36,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxSurnameClient = new System.Windows.Forms.TextBox();
             this.textBoxNameClient = new System.Windows.Forms.TextBox();
-            this.cueTextBoxMiddleNameClient = new CueTextBox();
             this.buttonAddClient = new System.Windows.Forms.Button();
-            this.cueTextBoxPhoneClient = new CueTextBox();
+            this.dgvClient = new System.Windows.Forms.DataGridView();
             this.cueTextBoxEmailClient = new CueTextBox();
+            this.cueTextBoxPhoneClient = new CueTextBox();
+            this.cueTextBoxMiddleNameClient = new CueTextBox();
+            this.buttonDelClient = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -111,19 +114,11 @@
             this.textBoxNameClient.Size = new System.Drawing.Size(305, 26);
             this.textBoxNameClient.TabIndex = 6;
             // 
-            // cueTextBoxMiddleNameClient
-            // 
-            this.cueTextBoxMiddleNameClient.Cue = "(не обязательно)";
-            this.cueTextBoxMiddleNameClient.Location = new System.Drawing.Point(267, 173);
-            this.cueTextBoxMiddleNameClient.Name = "cueTextBoxMiddleNameClient";
-            this.cueTextBoxMiddleNameClient.Size = new System.Drawing.Size(305, 26);
-            this.cueTextBoxMiddleNameClient.TabIndex = 11;
-            // 
             // buttonAddClient
             // 
             this.buttonAddClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(101)))));
-            this.buttonAddClient.Location = new System.Drawing.Point(43, 368);
+            this.buttonAddClient.Location = new System.Drawing.Point(43, 349);
             this.buttonAddClient.Name = "buttonAddClient";
             this.buttonAddClient.Size = new System.Drawing.Size(121, 33);
             this.buttonAddClient.TabIndex = 12;
@@ -131,13 +126,18 @@
             this.buttonAddClient.UseVisualStyleBackColor = true;
             this.buttonAddClient.Click += new System.EventHandler(this.buttonAddClient_Click);
             // 
-            // cueTextBoxPhoneClient
+            // dgvClient
             // 
-            this.cueTextBoxPhoneClient.Cue = "+7(987)-879-64-87";
-            this.cueTextBoxPhoneClient.Location = new System.Drawing.Point(267, 234);
-            this.cueTextBoxPhoneClient.Name = "cueTextBoxPhoneClient";
-            this.cueTextBoxPhoneClient.Size = new System.Drawing.Size(305, 26);
-            this.cueTextBoxPhoneClient.TabIndex = 13;
+            this.dgvClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClient.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvClient.BackgroundColor = System.Drawing.Color.White;
+            this.dgvClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClient.Location = new System.Drawing.Point(26, 403);
+            this.dgvClient.Name = "dgvClient";
+            this.dgvClient.RowTemplate.Height = 28;
+            this.dgvClient.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvClient.Size = new System.Drawing.Size(910, 251);
+            this.dgvClient.TabIndex = 16;
             // 
             // cueTextBoxEmailClient
             // 
@@ -147,11 +147,41 @@
             this.cueTextBoxEmailClient.Size = new System.Drawing.Size(305, 26);
             this.cueTextBoxEmailClient.TabIndex = 15;
             // 
+            // cueTextBoxPhoneClient
+            // 
+            this.cueTextBoxPhoneClient.Cue = "+7(987)-879-64-87";
+            this.cueTextBoxPhoneClient.Location = new System.Drawing.Point(267, 234);
+            this.cueTextBoxPhoneClient.Name = "cueTextBoxPhoneClient";
+            this.cueTextBoxPhoneClient.Size = new System.Drawing.Size(305, 26);
+            this.cueTextBoxPhoneClient.TabIndex = 13;
+            // 
+            // cueTextBoxMiddleNameClient
+            // 
+            this.cueTextBoxMiddleNameClient.Cue = "(не обязательно)";
+            this.cueTextBoxMiddleNameClient.Location = new System.Drawing.Point(267, 173);
+            this.cueTextBoxMiddleNameClient.Name = "cueTextBoxMiddleNameClient";
+            this.cueTextBoxMiddleNameClient.Size = new System.Drawing.Size(305, 26);
+            this.cueTextBoxMiddleNameClient.TabIndex = 11;
+            // 
+            // buttonDelClient
+            // 
+            this.buttonDelClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(68)))), ((int)(((byte)(101)))));
+            this.buttonDelClient.Location = new System.Drawing.Point(210, 349);
+            this.buttonDelClient.Name = "buttonDelClient";
+            this.buttonDelClient.Size = new System.Drawing.Size(121, 33);
+            this.buttonDelClient.TabIndex = 17;
+            this.buttonDelClient.Text = "Удалить";
+            this.buttonDelClient.UseVisualStyleBackColor = true;
+            this.buttonDelClient.Click += new System.EventHandler(this.buttonDelClient_Click);
+            // 
             // FormAddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 450);
+            this.ClientSize = new System.Drawing.Size(975, 666);
+            this.Controls.Add(this.buttonDelClient);
+            this.Controls.Add(this.dgvClient);
             this.Controls.Add(this.cueTextBoxEmailClient);
             this.Controls.Add(this.cueTextBoxPhoneClient);
             this.Controls.Add(this.buttonAddClient);
@@ -170,6 +200,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавить клиента";
             this.Load += new System.EventHandler(this.AddClient_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +219,7 @@
         private System.Windows.Forms.Button buttonAddClient;
         private CueTextBox cueTextBoxPhoneClient;
         private CueTextBox cueTextBoxEmailClient;
+        private System.Windows.Forms.DataGridView dgvClient;
+        private System.Windows.Forms.Button buttonDelClient;
     }
 }
